@@ -1,24 +1,7 @@
-# README
+# Secret Room #
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby on Rails project using Tailwind CSS, devise authentication, and Postgres database where publicly post authors are hidden but after registration and sign in authors are viewable.
 
-Things you may want to cover:
+## Notes ##
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Project Start Date: April 26, 2022
