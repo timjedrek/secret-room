@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   root "secrets#index"
-
+  get '/tailwindtut', to: 'pages#tailwindtut'
 end
