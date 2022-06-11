@@ -14,6 +14,61 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+
+    <!-- Navbar -->
+    <nav class="relative container mx-auto p-6">
+      <!--Flex container-->
+      <div class="flex items-center justify-between">
+        <!--Logo-->
+        <div class="pt-2">
+          <%= link_to root_path do %>
+            <h1 class="title">Secret Room</h1>
+          <% end %>
+        </div>
+        <!--Menu Items-->
+        <div class="hidden md:flex space-x-6">
+          <a href="#" class="hover:text-darkGrayishBlue">Pricing</a>
+          <a href="#" class="hover:text-darkGrayishBlue">Product</a>
+          <a href="#" class="hover:text-darkGrayishBlue">About Us</a>
+          <a href="#" class="hover:text-darkGrayishBlue">Career</a>
+          <a href="#" class="hover:text-darkGrayishBlue">Contact</a>
+        </div>
+        <!--Button-->
+        <a href="#" class="hidden md:block p-3 px-6 pt-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight">Get Started</a>
+        <!-- Hamburger Icon -->
+        <button
+          id="menu-btn"
+          class="block hamburger md:hidden focus:outline-none"
+        >
+          <span class="hamburger-top"></span>
+          <span class="hamburger-middle"></span>
+          <span class="hamburger-bottom"></span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="md:hidden">
+        <div
+          id="menu"
+          class="absolute flex-col items-center hidden self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md"
+        >
+          <a href="#">Pricing</a>
+          <a href="#">Product</a>
+          <a href="#">About Us</a>
+          <a href="#">Careers</a>
+          <a href="#">Community</a>
+        </div>
+      </div>
+      
+    </nav>
+
+
+
+    <%= link_to 'Write a Secret', root_path, class: "button is-info is-inverted" %>
+    <%= link_to 'Sign In', new_user_session_path, class: "button is-info" %>
+    <%= link_to 'Sign Up', new_user_registration_path, class: "button is-info" %>
+
+
     <main class="container mx-auto mt-28 px-5 flex">
       <%= yield %>
     </main>
