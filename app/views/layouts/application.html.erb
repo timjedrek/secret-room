@@ -12,8 +12,10 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <!--
+    <p class="notice"><%#= notice %></p>
+    <p class="alert"><%#= alert %></p>
+    -->
 
     <!-- Navbar -->
     <nav class="container mx-auto p-6 bg-orange-100 ">
@@ -33,13 +35,6 @@
         <%= link_to 'Sign In', new_user_session_path, class: "block p-3 text-sm md:px-6 py-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight" %>
       </div>
     </nav>
-
-
-
-
-
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
-    </main>
+    <%= yield %>
   </body>
 </html>
