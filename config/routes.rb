@@ -8,4 +8,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   root "secrets#index"
+
+  get "/pages/:page" => "pages#show"
+
 end
