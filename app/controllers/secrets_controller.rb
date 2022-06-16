@@ -4,6 +4,7 @@ class SecretsController < ApplicationController
   # GET /secrets or /secrets.json
   def index
     @secrets = Secret.all
+    @secret = Secret.new
   end
 
   # GET /secrets/1 or /secrets/1.json
