@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   root "secrets#index"
 
+
+  # static pages
   get "/pages/:page" => "pages#show"
 
 end
