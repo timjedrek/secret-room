@@ -29,7 +29,7 @@ class SecretsController < ApplicationController
         format.html { redirect_to index, notice: "Secret was successfully created." }
         format.json { render :show, status: :created, location: @secret }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { redirect_to index, status: :unprocessable_entity, alert: "Didn't work"}
         format.json { render json: @secret.errors, status: :unprocessable_entity }
       end
     end
