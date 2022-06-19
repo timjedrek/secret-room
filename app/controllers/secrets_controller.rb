@@ -26,10 +26,10 @@ class SecretsController < ApplicationController
 
     respond_to do |format|
       if @secret.save
-        format.html { redirect_to index, notice: "Secret was successfully created." }
+        format.html { redirect_to index, notice: "Secret was successfully created.  We won't tell anyone!" }
         format.json { render :show, status: :created, location: @secret }
       else
-        format.html { redirect_to index, status: :unprocessable_entity, alert: "Didn't work"}
+        format.html { redirect_to index, status: :unprocessable_entity, alert: "Adding a secret didn't work.  Make sure all fields are complete."}
         format.json { render json: @secret.errors, status: :unprocessable_entity }
       end
     end
