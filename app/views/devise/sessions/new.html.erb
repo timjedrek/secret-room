@@ -2,30 +2,24 @@
 <div class="flex flex-col md:flex-row md:justify-center">
   <div class="flex items-center justify-center p-6 p-12">
     <div class="w-full">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <h1 class="mb-4 text-2xl font-bold text-center text-gray-700">
         Sign In
       </h1>
       <div class="mt-4">
-        <label class="block text-sm">
-          Email
-        </label>
-        <input type="email"
-          class="w-full px-4 py-2 text-sm border rounded-md focus:border-brightRedLight focus:outline-none focus:ring-1 focus:ring-brightRedLight"
-          placeholder="Email Address" />
+        <%= f.label :email, class: "text-sm" %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "w-full px-4 py-2 text-sm border rounded-md focus:border-brightRedLight focus:outline-none focus:ring-1 focus:ring-brightRedLight" %>
       </div>
       <div>
-        <label class="block mt-4 text-sm">
-          Password
-        </label>
-        <input
-          class="w-full px-4 py-2 text-sm border rounded-md focus:border-brightRedLight focus:outline-none focus:ring-1 focus:ring-brightRedLight"
-          placeholder="Password" type="password" />
-      </div>  
-      <button
-        class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-brightRed border border-transparent rounded-full active:bg-brightRedLight hover:bg-brightRedLight focus:outline-none focus:shadow-outline-red"
-        href="#">
-        Sign in
-      </button>
+          <%= f.label :password, class: "text-sm" %><br />
+          <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", class: "w-full px-4 py-2 text-sm border rounded-md focus:border-brightRedLight focus:outline-none focus:ring-1 focus:ring-brightRedLight"  %>
+      </div>
+      <% if devise_mapping.rememberable? %>
+        <%= f.check_box :remember_me, class: "text-brightRed bg-gray-100 rounded border-gray-300" %>
+        <%= f.label :save_login_for_next_time, class: "text-sm" %>
+      <% end %>
+      <br>
+      <%= f.submit "Log in", class: "block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-brightRed border border-transparent rounded-full active:bg-brightRedLight hover:bg-brightRedLight focus:outline-none focus:shadow-outline-red" %>
 
       <div class="mt-4 text-center">
         <p class="text-sm">Don't have an account yet? 
@@ -35,37 +29,7 @@
           <%= link_to "forget your password?", new_password_path(resource_name), class: "text-brightRed hover:underline" %>
         </p>
       </div>
+      <% end %>
     </div>
   </div>
 </div>
-
-
-
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= link_to 'Sign Up', new_user_registration_path, class: "button is-info" %>
-
-<%= render "devise/shared/links" %>
