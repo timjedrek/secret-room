@@ -27,9 +27,14 @@
           You're secret is safe with us!
         </div>
         <!--Sign In Button-->
-        <%= link_to 'Sign In', new_user_session_path, class: "block p-3 text-sm md:px-6 py-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight" %>
+        <% if user_signed_in? %>
+            <%= link_to 'Sign Out', destroy_user_session_path, class: "block p-3 text-sm md:px-6 py-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight" %>
+        <% else %>
+          <%= link_to 'Sign In', new_user_session_path, class: "block p-3 text-sm md:px-6 py-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight" %>
+        <% end %>
       </div>
     </nav>
+
     <%= yield %>
   </body>
 </html>

@@ -3,6 +3,8 @@
   <div class="flex items-center justify-center p-6 p-12">
     <div class="w-full">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { data: { turbo: false} } ) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      <%= devise_error_messages! %>
       <h1 class="mb-4 text-2xl font-bold text-center text-gray-700">
         Sign In
       </h1>
