@@ -23,12 +23,17 @@
           <% end %>
         </div>
         <!--Middle Text-->
-        <div class="hidden md:flex space-x-6">
+        <div class="hidden md:flex space-x-6 text-xl">
           You're secret is safe with us!
         </div>
         <!--Sign In Button-->
         <% if user_signed_in? %>
-            <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, 'data-turbo': false, class: "block p-3 text-sm md:px-6 py-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight" %>
+          <div class="">
+            <%= button_to 'Edit Profile', edit_user_registration_path, method: :get, 'data-turbo': false, class: "block p-3 text-sm md:px-6 py-2 baseline text-center hover:text-brightRedLight" %>
+            <!--Need to fix this link later-->
+            <%= button_to 'My Secrets', edit_user_registration_path, method: :get, 'data-turbo': false, class: "block p-3 text-sm md:px-6 py-2 baseline text-center hover:text-brightRedLight" %>
+            <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, 'data-turbo': false, class: "block p-3 text-sm md:px-6 py-2 baseline text-center hover:text-brightRedLight" %>
+          </div>  
         <% else %>
           <%= button_to 'Sign In', new_user_session_path, class: "block p-3 text-sm md:px-6 py-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight" %>
         <% end %>
