@@ -30,7 +30,7 @@
         <% if user_signed_in? %>
           <div class="">
           <!--Need to fix this link later-->
-            <%= button_to 'My Secrets', usersecrets_path, method: :get, 'data-turbo': false, class: "block p-3 text-sm md:px-6 py-2 baseline text-center hover:text-brightRedLight" %>
+            <%= button_to 'My Secrets', secrets_usersecrets_path, method: :get, 'data-turbo': false, class: "block p-3 text-sm md:px-6 py-2 baseline text-center hover:text-brightRedLight" %>
             <%= button_to 'Edit Profile', edit_user_registration_path, method: :get, 'data-turbo': false, class: "block p-3 text-sm md:px-6 py-2 baseline text-center hover:text-brightRedLight" %>
             <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, 'data-turbo': false, class: "block p-3 text-sm md:px-6 py-2 baseline text-center hover:text-brightRedLight" %>
           </div>  
