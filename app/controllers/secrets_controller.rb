@@ -17,6 +17,10 @@ class SecretsController < ApplicationController
     @secret = current_user.secrets.build
   end
 
+  # GET /secrets/usersecrets
+  def usersecrets
+  end
+
   # GET /secrets/1/edit
   def edit
   end
