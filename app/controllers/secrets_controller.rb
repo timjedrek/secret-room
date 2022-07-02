@@ -1,5 +1,6 @@
 class SecretsController < ApplicationController
   before_action :set_secret, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /secrets or /secrets.json
   def index
