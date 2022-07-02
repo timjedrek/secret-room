@@ -4,7 +4,7 @@ Ruby on Rails project using Tailwind CSS, devise authentication, and Postgres da
 
 ## Notes ##
 
-Project Start Date:       April 26, 2022
+Project Start Date:       April 26, 2022 <br>
 Project Complete Date:    July 2, 2022
 
 View Live Version: https://pure-everglades-28668.herokuapp.com
