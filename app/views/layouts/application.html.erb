@@ -35,7 +35,7 @@
             <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, 'data-turbo': false, class: "block p-3 text-sm md:px-6 py-2 baseline text-center hover:text-brightRedLight" %>
           </div>  
         <% else %>
-          <%= button_to 'Sign In', new_user_session_path, class: "block p-3 text-sm md:px-6 py-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight" %>
+          <%= link_to 'Sign In', new_user_session_path, class: "block p-3 text-sm md:px-6 py-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight" %>
         <% end %>
       </div>
     </nav>
