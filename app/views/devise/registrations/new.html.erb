@@ -17,8 +17,8 @@
         <%= f.text_field :username, autocomplete: "username", placeholder: "Username", class: "w-full px-4 py-2 text-sm border rounded-md focus:border-brightRedLight focus:outline-none focus:ring-1 focus:ring-brightRedLight" %>
       </div>
       <div>
-        <div class="text-sm italic">
-          <%= f.label :password, class: "text-sm not-italic" %>
+        <div class="text-xs italic text-slate-500">
+          <%= f.label :password, class: "text-sm text-black not-italic" %>
           <% if @minimum_password_length %>
               (<%= @minimum_password_length %> characters minimum)
           <% end %>
